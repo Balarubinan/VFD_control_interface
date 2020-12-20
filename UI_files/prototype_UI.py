@@ -111,13 +111,6 @@ class Ui_Dialog(QtWidgets.QMainWindow):
 
         self.retranslateUi(Dialog)
         self.tabWidget.setCurrentIndex(3)
-        # calls and setsup the UI graph in the Tab!!
-        # check how to customise the graph in colors
-        # chech reszing options
-        # check livesness .... scrolling option
-        # create new UI with a dedicated space for graphs with defined size!!
-        self.gr=Graph_demo(self.VFDControlTab)
-        self.gr.start_graph()
 
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
@@ -155,11 +148,12 @@ class Ui_Dialog(QtWidgets.QMainWindow):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.VFDMonitorTab), _translate("Dialog", "VFD monitoring"))
 
 
-app = QtWidgets.QApplication([])
 
-window = Ui_Dialog()
-window.setupUi(window)
-window.show()
-
-app.exec_()
-
+# app = QtWidgets.QApplication([])
+#
+# window = Ui_Dialog()
+# window.setupUi(window)
+# window.show()
+#
+# app.exec_()
+#
