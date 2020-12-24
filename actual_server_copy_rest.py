@@ -43,15 +43,16 @@ class Linear(Resource):
     #
     #     super(Linear, self).__init__()
 
-    def get(self):
+    def get(self,reading):
         global last_val,captured_values,stand_by_value,captured_values
         return {"reading":last_val,"captured":captured_values}
 
-    def post(self):
+    def post(self,reading):
         global last_val, captured_values, stand_by_value, captured_values,cnt
         # reading -> if a number use as value  if "reset" clear all values in self.captured values
 
-        current_val = request.form['reading']
+        # current_val = request.form['reading']
+        current_val = reading
         print("current value")
 
         if current_val=="reset":
@@ -60,6 +61,7 @@ class Linear(Resource):
             stand_by_value=fetch_from_linear()
             last_val=stand_by_value
 
+        current_val=int(current_val)
         print("linear reading is ",current_val)
 
         if(last_val==current_val):
@@ -138,7 +140,9 @@ class Rotary(Resource):
 
 api.add_resource(TodoSimple,'/<string:todo_id>')
 api.add_resource(VFD_control,'/vfd')
-api.add_resource(Linear,'/lin')
+# use lin/<any number> to get the value
+# use lin/<reading> to put the value
+api.add_resource(Linear,'/lin/<string:reading>')
 api.add_resource(Rotary,'/rot')
 # api.add_resource(TodoSimple,'/')
 

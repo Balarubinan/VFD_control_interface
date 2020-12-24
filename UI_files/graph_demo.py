@@ -128,6 +128,8 @@ class Graph_demo(pg.PlotWidget,QDialog):
             seconds += wait_time
             times.append(seconds)
 
+        # write a function to add the data in values array to the DB
+
 
 # app=QApplication([])
 # w=Graph_demo()

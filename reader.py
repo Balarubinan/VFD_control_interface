@@ -2,7 +2,7 @@
 from tkinter import *
 from tkinter import font
 from threading import Thread
-from requests import put,get
+from requests import put,get,post
 
 curent_value=0
 root=Tk()
@@ -13,9 +13,9 @@ def yielder():
 
 def get_val():
     global seconds,cur,curent_value
-
+    # post("http://balarubinan.pythonanywhere.com/lin/reset")
     while(True):
-        val=get("http://balarubinan.pythonanywhere.com/lin")
+        val=get("http://balarubinan.pythonanywhere.com/lin/23")
         print(val.json())
 
         # cur['text']=val.json()['reading']

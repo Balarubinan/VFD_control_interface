@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1313</width>
-    <height>776</height>
+    <width>1346</width>
+    <height>783</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,12 +18,12 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1321</width>
+     <width>1341</width>
      <height>781</height>
     </rect>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="LinTab">
     <attribute name="title">
@@ -32,8 +32,8 @@
     <widget class="QPushButton" name="ResetButtonLin">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>670</y>
+       <x>520</x>
+       <y>590</y>
        <width>93</width>
        <height>28</height>
       </rect>
@@ -45,8 +45,8 @@
     <widget class="QPushButton" name="TreshButtonLin">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>670</y>
+       <x>640</x>
+       <y>590</y>
        <width>131</width>
        <height>28</height>
       </rect>
@@ -120,6 +120,26 @@
       <string>0</string>
      </property>
     </widget>
+    <widget class="QGraphicsView" name="LinVoltageGraph">
+     <property name="geometry">
+      <rect>
+       <x>665</x>
+       <y>80</y>
+       <width>581</width>
+       <height>451</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QGraphicsView" name="LinDistGraph">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>80</y>
+       <width>591</width>
+       <height>451</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="RotTab">
     <attribute name="title">
@@ -167,8 +187,8 @@
     <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>440</y>
+       <x>20</x>
+       <y>460</y>
        <width>151</width>
        <height>41</height>
       </rect>
@@ -180,18 +200,24 @@
     <widget class="QLineEdit" name="WheelInput">
      <property name="geometry">
       <rect>
-       <x>490</x>
-       <y>530</y>
-       <width>113</width>
-       <height>22</height>
+       <x>920</x>
+       <y>450</y>
+       <width>151</width>
+       <height>51</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 20pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <property name="text">
+      <string>0</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_5">
      <property name="geometry">
       <rect>
-       <x>310</x>
-       <y>520</y>
+       <x>740</x>
+       <y>460</y>
        <width>151</width>
        <height>41</height>
       </rect>
@@ -204,7 +230,7 @@
      <property name="geometry">
       <rect>
        <x>220</x>
-       <y>440</y>
+       <y>460</y>
        <width>151</width>
        <height>41</height>
       </rect>
@@ -226,11 +252,44 @@
       <string>0</string>
      </property>
     </widget>
+    <widget class="QGraphicsView" name="RotGraph">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>90</y>
+       <width>1191</width>
+       <height>341</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="VFDControlTab">
     <attribute name="title">
      <string>VFD controls</string>
     </attribute>
+    <widget class="QGraphicsView" name="Demo_graph">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>20</y>
+       <width>631</width>
+       <height>461</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>517</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Clear demo graph</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="VFDMonitorTab">
     <attribute name="title">
@@ -239,8 +298,8 @@
     <widget class="QPushButton" name="ResetButtonVFD">
      <property name="geometry">
       <rect>
-       <x>70</x>
-       <y>680</y>
+       <x>590</x>
+       <y>650</y>
        <width>93</width>
        <height>28</height>
       </rect>
@@ -252,8 +311,8 @@
     <widget class="QPushButton" name="TreshButtonVFD">
      <property name="geometry">
       <rect>
-       <x>190</x>
-       <y>680</y>
+       <x>710</x>
+       <y>650</y>
        <width>131</width>
        <height>28</height>
       </rect>
@@ -265,7 +324,7 @@
     <widget class="QLabel" name="label_8">
      <property name="geometry">
       <rect>
-       <x>430</x>
+       <x>490</x>
        <y>20</y>
        <width>151</width>
        <height>41</height>
@@ -278,7 +337,7 @@
     <widget class="QLabel" name="label_9">
      <property name="geometry">
       <rect>
-       <x>910</x>
+       <x>990</x>
        <y>20</y>
        <width>151</width>
        <height>41</height>
@@ -304,8 +363,8 @@
     <widget class="QPushButton" name="StartStopButton">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>580</y>
+       <x>630</x>
+       <y>550</y>
        <width>141</width>
        <height>28</height>
       </rect>
@@ -317,8 +376,8 @@
     <widget class="QPushButton" name="ChangeFreq">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>580</y>
+       <x>430</x>
+       <y>550</y>
        <width>93</width>
        <height>28</height>
       </rect>
@@ -330,8 +389,8 @@
     <widget class="QPushButton" name="ResetDefaultVFD">
      <property name="geometry">
       <rect>
-       <x>460</x>
-       <y>580</y>
+       <x>830</x>
+       <y>550</y>
        <width>111</width>
        <height>28</height>
       </rect>
@@ -356,10 +415,10 @@
     <widget class="QLabel" name="CurLabelV">
      <property name="geometry">
       <rect>
-       <x>570</x>
+       <x>660</x>
        <y>20</y>
        <width>151</width>
-       <height>41</height>
+       <height>40</height>
       </rect>
      </property>
      <property name="text">
@@ -369,7 +428,7 @@
     <widget class="QLabel" name="VolLabelV">
      <property name="geometry">
       <rect>
-       <x>1020</x>
+       <x>1100</x>
        <y>20</y>
        <width>151</width>
        <height>41</height>
@@ -377,6 +436,36 @@
      </property>
      <property name="text">
       <string>0</string>
+     </property>
+    </widget>
+    <widget class="QGraphicsView" name="FreqGraph">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>421</width>
+       <height>431</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QGraphicsView" name="VoltageGraph">
+     <property name="geometry">
+      <rect>
+       <x>900</x>
+       <y>80</y>
+       <width>421</width>
+       <height>431</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QGraphicsView" name="CurrentGraph">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>80</y>
+       <width>421</width>
+       <height>431</height>
+      </rect>
      </property>
     </widget>
    </widget>
