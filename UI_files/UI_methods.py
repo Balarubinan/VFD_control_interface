@@ -6,6 +6,7 @@ from UI_files.prototype2_UI import Ui_Dialog
 from PyQt5.QtWidgets import QMainWindow, QApplication
 from PyQt5 import QtCore, QtGui, QtWidgets
 from UI_files.graph_demo import Graph_demo
+from requests import get
 
 
 class Main_App(Ui_Dialog, QMainWindow):
@@ -24,8 +25,11 @@ class Main_App(Ui_Dialog, QMainWindow):
         # self.gr.setLabel('left', 'Voltage (mV)',color="red",**self.styles)
         self.gr.setLabel('left', 'Voltage (mV)',color="white",size="20")
         self.gr.setLabel('bottom', 'seconds (s)',color="white")
+        self.gr.set_yield_function(self.get_lin_values)
         self.gr.start_graph()
         self.gr.set_geometry([0,0,500,500])
+
+
         # shows the grid in the graph
         self.gr.showGrid(x=True, y=True)
 
@@ -103,6 +107,10 @@ class Main_App(Ui_Dialog, QMainWindow):
         gr.set_geometry(size)
         self.created_graphs.append(gr)
         return gr
+
+    def get_lin_values(self):
+        val = get("http://balarubinan.pythonanywhere.com/lin/23")
+        return val
 
 
 

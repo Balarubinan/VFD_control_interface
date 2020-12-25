@@ -4,11 +4,6 @@
     <list default="true" id="94e9092b-a14a-48aa-99e0-14a969953cd1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI_files/UI_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI_files/UI_methods.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI_files/graph_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI_files/graph_demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI_files/prototype_UI.ui" beforeDir="false" afterPath="$PROJECT_DIR$/UI_files/prototype_UI.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actual_server_copy_rest.py" beforeDir="false" afterPath="$PROJECT_DIR$/actual_server_copy_rest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/esp32.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/esp32.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/reader.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
