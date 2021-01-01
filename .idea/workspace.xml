@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="94e9092b-a14a-48aa-99e0-14a969953cd1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI_files/UI_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI_files/UI_methods.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +23,13 @@
   <component name="ProjectId" id="1eSZnIdwzJKJe3qjPwJhjwHUwnp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/RasperryPi_control_module" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Balarubinan\PycharmProjects\FlaskWreact\RasperryPi_control_module" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
