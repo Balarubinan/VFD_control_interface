@@ -8,7 +8,7 @@ matplotlib.use('Qt5Agg')
 import pyqtgraph as pg
 import numpy as np
 import matplotlib.pyplot as plt
-from random import randint
+from random import randint,choice
 import time
 from threading import Thread
 
@@ -22,6 +22,8 @@ class Graph_demo(pg.PlotWidget,QDialog):
         self.setYRange(0,1)
         self.setGeometry(QtCore.QRect(10, 10, 600, 600))
         self.customise_graph()
+        # set default function to random data generator!!
+        self.set_yield_function(self.get_data)
 
         # self.gr=pg.PlotWidget()
         # self.setCentralWidget(self.gr)
@@ -63,7 +65,7 @@ class Graph_demo(pg.PlotWidget,QDialog):
         global values_to_show, wait_time, treshold
         # define additional settings from console
         values_to_show = 20
-        wait_time = 1
+        wait_time = 0.3
         treshold = 30
         self.not_killed=True
         self.pen = pg.mkPen(color=(255, 80, 80), width=3, style=QtCore.Qt.SolidLine)
@@ -80,7 +82,7 @@ class Graph_demo(pg.PlotWidget,QDialog):
         """simulator of reading values from the board"""
         if randint(1, 100) % 2 == 0:
             return False, -1
-        return True, np.random.random()
+        return True, ((choice([-1,1]))*np.random.random())
         # return True, self.yielder()
 
     def kill_graph(self):
@@ -93,7 +95,10 @@ class Graph_demo(pg.PlotWidget,QDialog):
         times, vals = [0], []
         ind = 1
         while (self.not_killed):
-            value_read, reading = self.get_data()
+            # value_read, reading = self.get_data()
+            value_read, reading = self.yielder()
+            # value_read=True
+            # reading = self.yielder()
             if (value_read):
                 current_reading = reading
                 vals.append(current_reading)

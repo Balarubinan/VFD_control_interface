@@ -15,6 +15,7 @@ class ControlModule():
         self.gndPin=gndPin
         self.running=True
         self.threads=[]
+        self.start_up_operations()
 
     def start_up_operations(self):
         for x in [self.send_linear_value,self.send_rotary_value]:
@@ -28,13 +29,13 @@ class ControlModule():
         while(self.running):
             val=analog_read(self.linPin,self.gndPin)
             print("Value read for linear : ",val)
-            post(f"http://Balarubinan.pythonanywhere.com/lin/{val}")
+            post(f"http://balarubinan.pythonanywhere.com/lin/{val}")
             time.sleep(0.8)
 
     def send_rotary_value(self):
         while(self.running):
             val=GPIO.input(self.rotPin)
-            print("Value read for linear : ", val)
+            # print("Value read for linear : ", val)
             # check if high works or else use a 1
             if val==GPIO.HIGH:
                 post(f"http://Balarubinan.pythonanywhere.com/rot/{val}")
@@ -44,7 +45,8 @@ class ControlModule():
         print("All threads have been killed stopped")
 
 
-
+# start the program
+ControlModule()
 
 
 

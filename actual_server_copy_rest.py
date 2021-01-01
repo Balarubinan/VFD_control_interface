@@ -56,12 +56,13 @@ class Linear(Resource):
         print("current value")
 
         if current_val=="reset":
+            # reset not working !!
             print("reset in linear triggered!")
             captured_values=[]
             stand_by_value=fetch_from_linear()
             last_val=stand_by_value
 
-        current_val=int(current_val)
+        current_val=float(current_val)
         print("linear reading is ",current_val)
 
         if(last_val==current_val):
@@ -128,6 +129,7 @@ class Rotary(Resource):
         return {"pulses":pulse_read}
 
     def post(self):
+        # modify this function to read 1's and 0's for every instant
         global pulse_read,pulse_values
         val=request.form['pulses']
         pulse_read+=val

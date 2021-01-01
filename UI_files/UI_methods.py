@@ -37,6 +37,7 @@ class Main_App(Ui_Dialog, QMainWindow):
 
         # creating graph using defined methods
         self.lingr=self.create_sample_graph(self.LinDistGraph,"Time (sec)","Distance (m)")
+        self.lingr.set_yield_function(self.get_lin_values)
         self.lingr.start_graph()
         self.lingrVol = self.create_sample_graph(self.LinVoltageGraph, "Time (sec)", "voltage (m)")
         self.lingrVol.start_graph()
@@ -110,7 +111,8 @@ class Main_App(Ui_Dialog, QMainWindow):
 
     def get_lin_values(self):
         val = get("http://balarubinan.pythonanywhere.com/lin/23")
-        return val
+        print("Get vallll called@@@@@@@@@@@@@@@@@@@",val.json()['reading'])
+        return True,val.json()['reading']
 
 
 

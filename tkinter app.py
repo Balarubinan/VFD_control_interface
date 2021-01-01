@@ -11,11 +11,12 @@ def func():
     # post("http://balarubinan.pythonanywhere.com/lin",{"reading":"reset"})
     # print("After server reset")
     while(True):
-    # curr
-        current_val=get_cur_read()
         curr_label['text']=v1.get()
-        post("http://balarubinan.pythonanywhere.com/lin",{"reading":v1.get()})
+        val=str(v1.get()/100)
+        val=post("http://balarubinan.pythonanywhere.com/lin/"+val)
+        print("Resonse codde ",val)
         curr_label.pack()
+
 
 root=Tk()
 root.geometry('500x500')
@@ -29,3 +30,6 @@ s1.pack()
 t=Thread(target=func)
 t.start()
 root.mainloop()
+
+# val=post("http://balarubinan.pythonanywhere.com/lin/"+"57")
+# print(val)

@@ -13,10 +13,11 @@ def yielder():
 
 def get_val():
     global seconds,cur,curent_value
-    # post("http://balarubinan.pythonanywhere.com/lin/reset")
+    post("http://balarubinan.pythonanywhere.com/lin/0")
     while(True):
         val=get("http://balarubinan.pythonanywhere.com/lin/23")
         print(val.json())
+
 
         # cur['text']=val.json()['reading']
         curent_value=float(val.json()['reading'])
