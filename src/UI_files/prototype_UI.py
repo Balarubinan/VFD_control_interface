@@ -7,8 +7,8 @@
 # WARNING! All changes made in this file will be lost!
 
 
-from PyQt5 import QtCore, QtGui, QtWidgets
-from UI_files.graph_demo import Graph_demo
+from PyQt5 import QtCore, QtWidgets
+
 
 class Ui_Dialog(QtWidgets.QMainWindow):
     def setupUi(self, Dialog):

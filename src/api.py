@@ -1,7 +1,7 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request
 from flask_restful import Resource, Api
 from flask_cors import CORS
-from DBoperations import write_todo
+
 app = Flask(__name__)
 api = Api(app)
 CORS(app)

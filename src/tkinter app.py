@@ -1,8 +1,7 @@
-from new_rest import get_cur_read
 from tkinter import *
 from tkinter import font
 from threading import Thread
-from requests import put,post
+from requests import post
 
 def func():
     global curr_label,v1

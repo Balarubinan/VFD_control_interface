@@ -11,8 +11,7 @@
 
 from flask_restful import Resource, Api
 from flask import Flask,request
-from DBoperations import *
-from exposed_values import *
+from src.DBoperations import *
 
 app = Flask(__name__)
 api = Api(app)

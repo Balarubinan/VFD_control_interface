@@ -1,8 +1,6 @@
-import numpy as np
 import matplotlib.pyplot as plt
-from random import randint
 import time
-from reader import yielder
+from src.reader import yielder
 
 # plt.axis([0, 100, 0, 1])
 # plt,axis=plt1.subplots()

@@ -1,5 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtCore import QPointF
+from PyQt5.QtCore import QPointF,QTimer
 from PyQt5.QtGui import QLinearGradient, QColor, QGradient
 from PyQt5.QtWidgets import QMainWindow,QDialog,QApplication
 import sys
@@ -15,7 +15,7 @@ from threading import Thread
 seconds,values_to_show,wait_time,treshold=0,0,0,0
 
 class Graph_demo(pg.PlotWidget,QDialog):
-    # Qdialogs are mebedable in QWindows As QWidgets!!
+    # Qdialogs are embedable in QWindows As QWidgets!!
     def __init__(self,*args):
         super(Graph_demo, self).__init__(*args)
         self.setXRange(0,20)
@@ -24,6 +24,9 @@ class Graph_demo(pg.PlotWidget,QDialog):
         self.customise_graph()
         # set default function to random data generator!!
         self.set_yield_function(self.get_data)
+        # holds the refrence to the current plot
+        self.data_pointer=None
+
 
         # self.gr=pg.PlotWidget()
         # self.setCentralWidget(self.gr)
@@ -57,20 +60,38 @@ class Graph_demo(pg.PlotWidget,QDialog):
 
     def start_graph(self):
         self.init_settings()
-        self.t = Thread(target=self.add_point)
-        self.t.start()
-        print("After thread starting!")
+        # self.t = Thread(target=self.add_point)
+        # self.t.start()
+        # print("After thread starting!")
 
     def init_settings(self):
         global values_to_show, wait_time, treshold
         # define additional settings from console
         values_to_show = 20
-        wait_time = 0.3
+        wait_time = 1
         treshold = 30
         self.not_killed=True
         self.pen = pg.mkPen(color=(255, 80, 80), width=3, style=QtCore.Qt.SolidLine)
         self.pen2 = pg.mkPen(color=(37, 196, 143), width=3, style=QtCore.Qt.SolidLine)
         self.pen3 = pg.mkPen(color=(60, 50, 33), width=3, style=QtCore.Qt.SolidLine)
+
+        # adjusts the Y range!
+        self.setYRange(1,-1)
+
+        # optimized graph init settings
+        self.values=[]
+        self.values_to_show=values_to_show
+        self.cnt=0
+
+        # plotting randm data to obtain pointer to plotItem object!
+        self.data_pointer=self.plot([0],[0],pen=self.pen)
+        self.timer=QTimer()
+        self.timer.setInterval(1000)
+        self.timer.timeout.connect(self.optimized_graph)
+        self.timer.start()
+
+
+
 
         # gradient = QLinearGradient(QPointF(0, 0), QPointF(0, 1))
         # gradient.setColorAt(0.0, QColor(60, 50, 33))
@@ -80,8 +101,8 @@ class Graph_demo(pg.PlotWidget,QDialog):
 
     def get_data(self):
         """simulator of reading values from the board"""
-        if randint(1, 100) % 2 == 0:
-            return False, -1
+        # if randint(1, 100) % 2 == 0:
+        #     return False, -1
         return True, ((choice([-1,1]))*np.random.random())
         # return True, self.yielder()
 
@@ -94,25 +115,19 @@ class Graph_demo(pg.PlotWidget,QDialog):
         current_reading = 0
         times, vals = [0], []
         ind = 1
+        # change back to while instead of 'if' is using threads and not Qtimer
         while (self.not_killed):
-            # value_read, reading = self.get_data()
             value_read, reading = self.yielder()
-            # value_read=True
-            # reading = self.yielder()
             if (value_read):
                 current_reading = reading
                 vals.append(current_reading)
                 if seconds * wait_time > 20:
-                    # plt.plot(times[ind:], vals[ind:],color="blue")
-                    # plotting only the last values_to_show number of  values using list slicing
-                    # plt.axis([ind, values_to_show + ind - 1, 0, 1])
-                    # self.plot(times[ind:], times[:(values_to_show + ind)])
-                    # plt.fill_between(x, y)
-                    # auto scroll is achived by the below statement
                     self.setXRange(0+ind, 20+ind)
                     ind += 1
-
-                self.plot(times, vals,pen=self.pen) #,symbol="o",symbolsize=30)
+                if self.data_pointer is None:
+                    self.plot(times, vals,pen=self.pen) #,symbol="o",symbolsize=30)
+                else:
+                    self.data_pointer.setdata(times,vals)
                 print("PLot done")
                 # plt.pause(0.05)
             else:
@@ -123,8 +138,10 @@ class Graph_demo(pg.PlotWidget,QDialog):
                     # self.plot(times[ind:], times[:(values_to_show + ind)])
                     self.setXRange(0+ind, 20+ind)
                     ind += 1
-
-                self.plot(times, vals,pen=self.pen) #,symbol="o",symbolsize=30)
+                if self.data_pointer is None:
+                    self.plot(times, vals,pen=self.pen) #,symbol="o",symbolsize=30)
+                else:
+                    self.data_pointer.setdata(times, vals)
                 print("PLot donesdvsdvv")
                 # plt.pause(0.05)
 
@@ -133,8 +150,19 @@ class Graph_demo(pg.PlotWidget,QDialog):
             seconds += wait_time
             times.append(seconds)
 
-        # write a function to add the data in values array to the DB
-
+    def optimized_graph(self):
+        if self.not_killed is True:
+            got,reading=self.yielder()
+            self.cnt+=1
+            if got:
+                self.values.append(reading)
+            else:
+                self.values.append(self.values[-1])
+            self.data_pointer.setData([x for x in range(self.cnt)],self.values)
+            if len(self.values)>self.values_to_show:
+                # self.setXRange(self.cnt,self.cnt+self.values_to_show)
+                self.values.pop(0)
+                self.cnt-=1
 
 # app=QApplication([])
 # w=Graph_demo()
