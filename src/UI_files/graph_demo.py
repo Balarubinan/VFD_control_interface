@@ -16,10 +16,11 @@ seconds,values_to_show,wait_time,treshold=0,0,0,0
 
 class Graph_demo(pg.PlotWidget,QDialog):
     # Qdialogs are embedable in QWindows As QWidgets!!
-    def __init__(self,*args):
+    def __init__(self,*args,useColor="G"):
         super(Graph_demo, self).__init__(*args)
         self.setXRange(0,20)
         self.setYRange(0,1)
+        self.useColor=useColor
         self.setGeometry(QtCore.QRect(10, 10, 600, 600))
         self.customise_graph()
         # set default function to random data generator!!
@@ -69,12 +70,28 @@ class Graph_demo(pg.PlotWidget,QDialog):
         # define additional settings from console
         values_to_show = 20
         wait_time = 1
+        # threshold not used -> jsut switch the pens based on the condition
         treshold = 30
         self.not_killed=True
-        self.pen = pg.mkPen(color=(255, 80, 80), width=3, style=QtCore.Qt.SolidLine)
-        self.pen2 = pg.mkPen(color=(37, 196, 143), width=3, style=QtCore.Qt.SolidLine)
-        self.pen3 = pg.mkPen(color=(60, 50, 33), width=3, style=QtCore.Qt.SolidLine)
-
+        self.red_pen = pg.mkPen(color=(255, 80, 80), width=3, style=QtCore.Qt.SolidLine)
+        self.green_pen = pg.mkPen(color=(37, 196, 143), width=3, style=QtCore.Qt.SolidLine)
+        self.yellow_pen = pg.mkPen(color=(185,126,10), width=3, style=QtCore.Qt.SolidLine)
+        self.blue_pen = pg.mkPen(color=(9,166,212), width=3, style=QtCore.Qt.SolidLine)
+        self.GREEN,self.RED,self.YELLOW,self.BLUE=(33,63,58),(49,37,42),(70,56,32),(28,57,69)
+        self.CurPen=None
+        if self.useColor is "G":
+            self.CurPen,self.useColor=self.green_pen,self.GREEN
+        elif self.useColor is "R":
+            self.CurPen, self.useColor = self.red_pen, self.RED
+        elif self.useColor is "B":
+            self.CurPen, self.useColor = self.blue_pen, self.BLUE
+        else:
+            self.CurPen, self.useColor = self.yellow_pen, self.YELLOW
+        # secondary green - 33,63,58
+        # secondary red - 49,37,42
+        # secondary yellow - 65,54,33
+        # main yellow - 185,126,10
+        # secondary blue - 28,57,69
         # adjusts the Y range!
         self.setYRange(1,-1)
 
@@ -82,11 +99,17 @@ class Graph_demo(pg.PlotWidget,QDialog):
         self.values=[]
         self.values_to_show=values_to_show
         self.cnt=0
+        # overflow counter
+        self.ind=0
+        self.wait_time=wait_time
 
         # plotting randm data to obtain pointer to plotItem object!
-        self.data_pointer=self.plot([0],[0],pen=self.pen)
+        self.data_pointer=self.plot([0],[0],pen=self.CurPen)
+        # null curve to refrence for filling color using plot inbetween
+        self.base_pointer=self.plot([0],[0])
         self.timer=QTimer()
-        self.timer.setInterval(1000)
+        # waitime is in seconds
+        self.timer.setInterval(self.wait_time*1000)
         self.timer.timeout.connect(self.optimized_graph)
         self.timer.start()
 
@@ -160,9 +183,12 @@ class Graph_demo(pg.PlotWidget,QDialog):
                 self.values.append(self.values[-1])
             self.data_pointer.setData([x for x in range(self.cnt)],self.values)
             if len(self.values)>self.values_to_show:
-                # self.setXRange(self.cnt,self.cnt+self.values_to_show)
-                self.values.pop(0)
-                self.cnt-=1
+                self.ind+=1
+                self.setXRange(self.ind,self.values_to_show+self.ind)
+            # filling base null value
+            self.base_pointer.setData([x for x in range(self.cnt)],[0]*self.cnt)
+            w=pg.FillBetweenItem(self.data_pointer,self.base_pointer,brush=self.useColor)
+            self.addItem(w)
 
 # app=QApplication([])
 # w=Graph_demo()

@@ -37,9 +37,9 @@ class Main_App(Ui_Dialog, QMainWindow):
         # uncomment to use actual value
         # self.lingr.set_yield_function(self.get_lin_values)
         self.lingr.start_graph()
-        self.lingrVol = self.create_sample_graph(self.LinVoltageGraph, "Time (sec)", "voltage (m)")
+        self.lingrVol = self.create_sample_graph(self.LinVoltageGraph, "Time (sec)", "voltage (m)",color="Y")
         self.lingrVol.start_graph()
-        self.rotgr = self.create_sample_graph(self.RotGraph, "Time (sec)", "pulses ",size=[0,0,1200,330])
+        self.rotgr = self.create_sample_graph(self.RotGraph, "Time (sec)", "pulses ",size=[0,0,1200,330],color="B")
         self.rotgr.start_graph()
 
 
@@ -50,18 +50,13 @@ class Main_App(Ui_Dialog, QMainWindow):
         # defines styling options in the graph
 
         # todo
-        # calls and setsup the UI graph in the Tab!! -> done
-        # check how to customise the graph in colors -> done
-        # chech reszing options -> done
-        # check livesness .... scrolling option -> Done
         # create new UI with a dedicated space for graphs with defined size!!
-        # add additonal init methods here!!
-        # create mutiple graphs in the same page -> done
-        # create visual effects as seen in blynk graphs
-        # create super imposed graphs
+        # create super imposed graphs ?? do we need it??
         # check how to create neon and gradient graphs
         # check multiple subplot creation
         # create color customisation for the graph method
+        # create a direct socket connection to the server to send and recieve rotary encoder data
+        # rotary encoder data needs to be instantaneous!!
 
         # this line connects the 'X' button to a function
         app.aboutToQuit.connect(self.wind_up)
@@ -95,8 +90,8 @@ class Main_App(Ui_Dialog, QMainWindow):
     def clear_graph(self):
         self.gr.clear()
 
-    def create_sample_graph(self,parent,xunit,yunit,size=[0, 0, 500, 500]):
-        gr = Graph_demo(parent)
+    def create_sample_graph(self,parent,xunit,yunit,size=[0, 0, 591, 451],color="G"):
+        gr = Graph_demo(parent,useColor=color)
         # styles = {'color': 'w', 'font-size': '20px'}
         # self.gr.setLabel('left', 'Voltage (mV)',color="red",**self.styles)
         gr.setLabel('left', f'{yunit}', color="white", size="20")
