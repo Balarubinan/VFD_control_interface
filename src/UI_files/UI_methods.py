@@ -16,15 +16,10 @@ class Main_App(Ui_Dialog, QMainWindow):
 
 
         # Gr is the only graoh created without using self.create_graph method
-        self.gr = Graph_demo(self.Demo_graph)
-        self.styles = {'color': 'w', 'font-size': '20px'}
-        # self.gr.setLabel('left', 'Voltage (mV)',color="red",**self.styles)
-        self.gr.setLabel('left', 'Voltage (mV)',color="white",size="20")
-        self.gr.setLabel('bottom', 'seconds (s)',color="white")
+        self.gr = self.create_sample_graph(self.Demo_graph,"Voltage (V)","Time (sec)")
         # uncomment this part to use the actual values from the server
         # self.gr.set_yield_function(self.get_lin_values)
         self.gr.start_graph()
-        self.gr.set_geometry([0,0,500,500])
 
 
         # shows the grid in the graph
@@ -33,7 +28,7 @@ class Main_App(Ui_Dialog, QMainWindow):
         self.pushButton.clicked.connect(self.clear_graph)
 
         # creating graph using defined methods
-        self.lingr=self.create_sample_graph(self.LinDistGraph,"Time (sec)","Distance (m)")
+        self.lingr=self.create_sample_graph(self.LinDistGraph,"Time (sec)","Distance (m)",Txtlabel=self.DistanceLabel)
         # uncomment to use actual value
         # self.lingr.set_yield_function(self.get_lin_values)
         self.lingr.start_graph()
@@ -52,9 +47,6 @@ class Main_App(Ui_Dialog, QMainWindow):
         # todo
         # create new UI with a dedicated space for graphs with defined size!!
         # create super imposed graphs ?? do we need it??
-        # check how to create neon and gradient graphs
-        # check multiple subplot creation
-        # create color customisation for the graph method
         # create a direct socket connection to the server to send and recieve rotary encoder data
         # rotary encoder data needs to be instantaneous!!
 
@@ -90,8 +82,8 @@ class Main_App(Ui_Dialog, QMainWindow):
     def clear_graph(self):
         self.gr.clear()
 
-    def create_sample_graph(self,parent,xunit,yunit,size=[0, 0, 591, 451],color="G"):
-        gr = Graph_demo(parent,useColor=color)
+    def create_sample_graph(self,parent,xunit,yunit,size=[0, 0, 591, 451],color="G",Txtlabel=None):
+        gr = Graph_demo(parent,useColor=color,TextLabel=Txtlabel)
         # styles = {'color': 'w', 'font-size': '20px'}
         # self.gr.setLabel('left', 'Voltage (mV)',color="red",**self.styles)
         gr.setLabel('left', f'{yunit}', color="white", size="20")

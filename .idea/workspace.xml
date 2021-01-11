@@ -2,9 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94e9092b-a14a-48aa-99e0-14a969953cd1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Flask_server_files/Latest_server_copy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/FlaskWreact.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FlaskWreact.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RasperryPi_control_module/control_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/RasperryPi_control_module/control_class.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBoperations.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/DBoperations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI_files/UI_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI_files/UI_methods.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI_files/graph_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI_files/graph_demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI_files/prototype2_UI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI_files/prototype2_UI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actual_server_copy_rest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/actual_server_copy_rest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database_readings.db" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/database_readings.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database_todo.db" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/database_todo.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exposed_values.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/exposed_values.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/new_rest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/new_rest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/old_server.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,11 +41,14 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Balarubinan\PycharmProjects\FlaskWreact\src" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Balarubinan\PycharmProjects\FlaskWreact\RasperryPi_control_module" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Balarubinan\PycharmProjects\FlaskWreact\Flask_server_files" />
+      <recent name="C:\Users\Balarubinan\PycharmProjects\FlaskWreact" />
+      <recent name="C:\Users\Balarubinan\PycharmProjects\FlaskWreact\Flask_rest_Api Files" />
+      <recent name="C:\Users\Balarubinan\PycharmProjects\FlaskWreact\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -48,7 +63,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.UI_methods (1)">
+  <component name="RunManager" selected="Python.actual_server_copy_rest (1)">
     <configuration name="UI_methods (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="FlaskWreact" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -91,7 +106,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="reader" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="actual_server_copy_rest (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="FlaskWreact" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -99,11 +114,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Flask_server_files" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Balarubinan\PycharmProjects\FlaskWreact\src\reader.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Flask_server_files/actual_server_copy_rest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="actual_server_copy_rest" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="FlaskWreact" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Flask_rest_Api Files" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\Balarubinan\PycharmProjects\FlaskWreact\Flask_server_files\actual_server_copy_rest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -133,34 +169,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tkinter app" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="FlaskWreact" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Balarubinan\PycharmProjects\FlaskWreact\src\tkinter app.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.actual_server_copy_rest (1)" />
+        <item itemvalue="Python.actual_server_copy_rest" />
         <item itemvalue="Python.UI_methods (1)" />
         <item itemvalue="Python.scratch" />
         <item itemvalue="Python.UI_methods" />
-        <item itemvalue="Python.tkinter app" />
-        <item itemvalue="Python.reader" />
       </list>
     </recent_temporary>
   </component>

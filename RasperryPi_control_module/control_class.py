@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 import gpiozero as gpz
-from analog_read import analog_read
+from .analog_read import analog_read
 from time import sleep
 from requests import get,put,post
 import time
@@ -14,14 +14,19 @@ class ControlModule():
         self.vfdPin=vfd
         self.gndPin=gndPin
         self.running=True
-        self.threads=[]
+        # self.threads=[]
         self.start_up_operations()
+        # timeout is in seconds
+        self.standby_timeout=15
+
+    def in_standby(self):
+        pass
 
     def start_up_operations(self):
         for x in [self.send_linear_value,self.send_rotary_value]:
             t=Thread(target=x)
             t.start()
-            self.threads.append(t)
+            # self.threads.append(t)
         print("Startup operations complete!!")
 
 
@@ -38,6 +43,9 @@ class ControlModule():
             # print("Value read for linear : ", val)
             # check if high works or else use a 1
             if val==GPIO.HIGH:
+                # post command takes a micro second or 2 hence wait time is produced
+                # we cannot wait in here if we wait in here then we may miss rotary encoder pulses
+                # use a thread or a async statment to get rid of instantaneous wait time!
                 post(f"http://Balarubinan.pythonanywhere.com/rot/{val}")
 
     def kill_sensors(self,secs):

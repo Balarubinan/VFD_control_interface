@@ -11,7 +11,8 @@
 
 from flask_restful import Resource, Api
 from flask import Flask,request
-from src.DBoperations import *
+from .DBoperations import *
+from .exposed_values import *
 
 app = Flask(__name__)
 api = Api(app)
@@ -55,7 +56,6 @@ class Linear(Resource):
         print("current value")
 
         if current_val=="reset":
-            # reset not working !!
             print("reset in linear triggered!")
             captured_values=[]
             stand_by_value=fetch_from_linear()
@@ -128,7 +128,6 @@ class Rotary(Resource):
         return {"pulses":pulse_read}
 
     def post(self):
-        # modify this function to read 1's and 0's for every instant
         global pulse_read,pulse_values
         val=request.form['pulses']
         pulse_read+=val
@@ -147,16 +146,9 @@ api.add_resource(Linear,'/lin/<string:reading>')
 api.add_resource(Rotary,'/rot')
 # api.add_resource(TodoSimple,'/')
 
-# @app.route('/')
-# def entry(r):
-#     return {'this':'okay messge'}
-
-# graph code to be added here
-
-# app.run(debug=True)
 print("server started!!")
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
-    print("server started!!")
+# if __name__ == '__main__':
+#     app.run(debug=True)
+#     print("server started!!")

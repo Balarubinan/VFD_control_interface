@@ -140,7 +140,7 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Control Panel V 0.0"))
+        Dialog.setWindowTitle(_translate("Dialog", "Control Panel V 0.1"))
         self.ResetButtonLin.setText(_translate("Dialog", "Reset readings"))
         self.TreshButtonLin.setText(_translate("Dialog", "change treshold"))
         self.label.setText(_translate("Dialog", "Distance value"))
