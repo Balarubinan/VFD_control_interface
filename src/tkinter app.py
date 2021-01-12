@@ -2,7 +2,9 @@ from tkinter import *
 from tkinter import font
 from threading import Thread
 from requests import post
+from time import sleep
 
+i=0
 def func():
     global curr_label,v1
 
@@ -10,10 +12,15 @@ def func():
     # post("http://balarubinan.pythonanywhere.com/lin",{"reading":"reset"})
     # print("After server reset")
     while(True):
+        global i
         curr_label['text']=v1.get()
-        val=str(v1.get()/100)
-        val=post("http://balarubinan.pythonanywhere.com/lin/"+val)
-        print("Resonse codde ",val)
+        val=100
+        # val=str(v1.get()/100)
+        if i%2==0:
+            val=post("http://127.0.0.1:5000/rot/reading")
+            print("Resonse codde ",val)
+        i+=1
+        sleep(2)
         curr_label.pack()
 
 

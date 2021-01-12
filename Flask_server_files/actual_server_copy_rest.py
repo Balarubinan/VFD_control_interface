@@ -13,12 +13,17 @@ from flask_restful import Resource, Api
 from flask import Flask,request
 from Flask_server_files.DBoperations import *
 from Flask_server_files.exposed_values import *
+from Flask_server_files.handler_thread import standby_tracker
+from threading import Thread
 
 app = Flask(__name__)
 api = Api(app)
 
 def get_cur_read():
     return current_val
+
+def get_cur_rot():
+    return pulse_read
 
 class TodoSimple(Resource):
     def get(self, todo_id):
@@ -96,14 +101,15 @@ class VFD_control(Resource):
         global current,freq,voltage
         return {"cur":current,"freq":freq,"vol":voltage}
 
-    def post(self):
+    def post(self,mode,value):
         global current, freq, voltage
-        mode=request.form['mode']
+        # mode=request.form['mode']
         if mode=="control":
             self.control_module()
             return {"vfd feed":f"control updated {mode}"}
 
-        value = request.form['value']
+        # value = request.form['value']
+        value=float(value)
         if mode=="freq":
             freq=value
         if mode=="current":
@@ -121,22 +127,30 @@ class VFD_control(Resource):
         #write code for control value passing
 
 class Rotary(Resource):
-    # def __init__(self):
 
-    def get(self):
+    def get(self,type):
         global pulse_values,pulse_read
         return {"pulses":pulse_read}
 
-    def post(self):
-        global pulse_read,pulse_values
-        val=request.form['pulses']
-        pulse_read+=val
-        write_to_rotary(val)
-        pulse_values.append(val)
-        if len(pulse_values)==100:
-            # remove one value
-            pulse_values.pop(0)
-        # add update graph function here
+    def post(self,type):
+        global pulse_read,pulse_values,standing_by
+        # val=request.form['pulses']
+        if type=="start":
+            t=Thread(target=standby_tracker)
+            t.start()
+            return {'status':'timer started'}
+        else:
+            pulse_read=True
+            if standing_by:
+                standing_by=False
+            time.sleep(0.95)
+            return {'status':'updated'}
+
+
+
+
+
+
 
 # Resource to serve client with data from database
 class DataServer(Resource):
@@ -146,12 +160,23 @@ class DataServer(Resource):
     def post(self):
         pass
 
+# this function also works without problems!!
+# check how to use both get and post at once in this
+# @app.route('/124',methods=["GET","POST"])
+# def return_hello():
+#     if request.form is not []:
+#         return {"you gave the value":request.form['data']}
+#     else:
+#         return {"POst method called":"adasdsf"}
+# write a standalone function to return all the results gathered by the ML algo as
+# a simple JSON data
+
 api.add_resource(TodoSimple,'/<string:todo_id>')
-api.add_resource(VFD_control,'/vfd')
+api.add_resource(VFD_control,'/vfd/<string:mode>/<string:value>')
 # use lin/<any number> to get the value
 # use lin/<reading> to put the value
 api.add_resource(Linear,'/lin/<string:reading>')
-api.add_resource(Rotary,'/rot')
+api.add_resource(Rotary,'/rot/<string:type>')
 # api.add_resource(TodoSimple,'/')
 
 print("server started!!")

@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94e9092b-a14a-48aa-99e0-14a969953cd1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Flask_server_files/Latest_server_copy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/FlaskWreact.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FlaskWreact.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RasperryPi_control_module/control_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/RasperryPi_control_module/control_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBoperations.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/DBoperations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flask_server_files/actual_server_copy_rest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/actual_server_copy_rest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flask_server_files/exposed_values.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/exposed_values.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI_files/UI_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI_files/UI_methods.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI_files/graph_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI_files/graph_demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI_files/prototype2_UI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI_files/prototype2_UI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actual_server_copy_rest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/actual_server_copy_rest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database_readings.db" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/database_readings.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database_todo.db" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/database_todo.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exposed_values.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/exposed_values.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/new_rest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/new_rest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/old_server.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tkinter app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tkinter app.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +53,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.actual_server_copy_rest (1)">
+  <component name="RunManager" selected="Python.simulator">
     <configuration name="UI_methods (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="FlaskWreact" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -77,27 +67,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/UI_files/UI_methods.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="UI_methods" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="FlaskWreact" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/UI_files" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/UI_files/UI_methods.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -127,7 +96,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="actual_server_copy_rest" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="simulator" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="FlaskWreact" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -135,11 +104,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Flask_rest_Api Files" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Flask_server_files" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Balarubinan\PycharmProjects\FlaskWreact\Flask_server_files\actual_server_copy_rest.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Flask_server_files/simulator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -148,7 +117,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="scratch" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="socket_IO implementation" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="FlaskWreact" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -156,11 +125,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Flask_server_files" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Flask_server_files/socket_IO implementation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tkinter app" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="FlaskWreact" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/tkinter app.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -171,11 +161,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.actual_server_copy_rest (1)" />
-        <item itemvalue="Python.actual_server_copy_rest" />
+        <item itemvalue="Python.simulator" />
+        <item itemvalue="Python.socket_IO implementation" />
+        <item itemvalue="Python.tkinter app" />
         <item itemvalue="Python.UI_methods (1)" />
-        <item itemvalue="Python.scratch" />
-        <item itemvalue="Python.UI_methods" />
+        <item itemvalue="Python.actual_server_copy_rest (1)" />
       </list>
     </recent_temporary>
   </component>

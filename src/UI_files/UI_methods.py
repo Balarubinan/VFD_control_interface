@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import QMainWindow
 from PyQt5 import QtWidgets
 from src.UI_files.graph_demo import Graph_demo
 from requests import get
+from Flask_server_files.simulator import get_values
 
 
 class Main_App(Ui_Dialog, QMainWindow):
@@ -35,6 +36,7 @@ class Main_App(Ui_Dialog, QMainWindow):
         self.lingrVol = self.create_sample_graph(self.LinVoltageGraph, "Time (sec)", "voltage (m)",color="Y")
         self.lingrVol.start_graph()
         self.rotgr = self.create_sample_graph(self.RotGraph, "Time (sec)", "pulses ",size=[0,0,1200,330],color="B")
+        self.rotgr.set_yield_function(get_values)
         self.rotgr.start_graph()
 
 
