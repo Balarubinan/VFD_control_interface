@@ -17,27 +17,27 @@ class Main_App(Ui_Dialog, QMainWindow):
 
 
         # Gr is the only graoh created without using self.create_graph method
-        self.gr = self.create_sample_graph(self.Demo_graph,"Voltage (V)","Time (sec)")
-        # uncomment this part to use the actual values from the server
-        # self.gr.set_yield_function(self.get_lin_values)
-        self.gr.start_graph()
+        # self.gr = self.create_sample_graph(self.Demo_graph,"Voltage (V)","Time (sec)")
+        # # uncomment this part to use the actual values from the server
+        # # self.gr.set_yield_function(self.get_lin_values)
+        # self.gr.start_graph()
 
 
         # shows the grid in the graph
-        self.gr.showGrid(x=True, y=True)
+        # self.gr.showGrid(x=True, y=True)
 
         self.pushButton.clicked.connect(self.clear_graph)
 
         # creating graph using defined methods
         self.lingr=self.create_sample_graph(self.LinDistGraph,"Time (sec)","Distance (m)",Txtlabel=self.DistanceLabel)
         # uncomment to use actual value
-        # self.lingr.set_yield_function(self.get_lin_values)
+        self.lingr.set_yield_function(self.get_rot_values)
         self.lingr.start_graph()
-        self.lingrVol = self.create_sample_graph(self.LinVoltageGraph, "Time (sec)", "voltage (m)",color="Y")
-        self.lingrVol.start_graph()
-        self.rotgr = self.create_sample_graph(self.RotGraph, "Time (sec)", "pulses ",size=[0,0,1200,330],color="B")
-        self.rotgr.set_yield_function(get_values)
-        self.rotgr.start_graph()
+        # self.lingrVol = self.create_sample_graph(self.LinVoltageGraph, "Time (sec)", "voltage (m)",color="Y")
+        # self.lingrVol.start_graph()
+        # self.rotgr = self.create_sample_graph(self.RotGraph, "Time (sec)", "pulses ",size=[0,0,1200,330],color="B")
+        # # self.rotgr.set_yield_function(get_values)
+        # self.rotgr.start_graph()
 
 
         # CLEAR_BUTTON
@@ -60,7 +60,7 @@ class Main_App(Ui_Dialog, QMainWindow):
         # added all the code to be stopped into this one
         for x in self.created_graphs:
             x.kill_graph()
-        self.gr.kill_graph()
+        # self.gr.kill_graph()
         print("Graph killed")
 
     def lin_control(self):
@@ -96,9 +96,11 @@ class Main_App(Ui_Dialog, QMainWindow):
         self.created_graphs.append(gr)
         return gr
 
-    def get_lin_values(self):
-        val = get("http://balarubinan.pythonanywhere.com/lin/23")
-        return True,val.json()['reading']
+    def get_rot_values(self):
+        val = get("http://127.0.0.1:5000/rot/23")
+        print("respoms",val)
+        val=val.json()['pulses']
+        return True,(int(val),1)
 
 
 

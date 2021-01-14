@@ -10,7 +10,7 @@ import numpy as np
 # import matplotlib.pyplot as plt
 from random import randint, choice
 import time
-# from threading import Thread
+from threading import Thread
 
 seconds, values_to_show, wait_time, treshold = 0, 0, 0, 0
 
@@ -46,9 +46,9 @@ class Graph_demo(pg.PlotWidget, QDialog):
 
     def start_graph(self):
         self.init_settings()
-        # self.t = Thread(target=self.add_point)
-        # self.t.start()
-        # print("After thread starting!")
+        self.t = Thread(target=self.add_manual_point)
+        self.t.start()
+        print("After thread starting!")
 
     def init_settings(self):
         global values_to_show, wait_time, treshold
@@ -83,7 +83,7 @@ class Graph_demo(pg.PlotWidget, QDialog):
         self.setYRange(1, -1)
 
         # optimized graph init settings
-        self.values = []
+        self.values,self.times = [],[]
         self.values_to_show = values_to_show
         self.cnt = 0
         # overflow counter
@@ -93,13 +93,13 @@ class Graph_demo(pg.PlotWidget, QDialog):
         # plotting randm data to obtain pointer to plotItem object
         self.data_pointer = self.plot([0], [0], pen=self.CurPen)
         # null curve to refrence for filling color using plot inbetween
-        self.base_pointer = self.plot([0], [0])
+        self.base_pointer = self.plot([0], [0],pen=self.green_pen)
 
-        self.timer = QTimer()
-        # waitime is in seconds
-        self.timer.setInterval(self.wait_time * 1000)
-        self.timer.timeout.connect(self.optimized_graph)
-        self.timer.start()
+        # self.timer = QTimer()
+        # # waitime is in seconds
+        # self.timer.setInterval(self.wait_time * 1000)
+        # self.timer.timeout.connect(self.optimized_graph)
+        # self.timer.start()
 
     def get_data(self):
         """simulator of reading values from the board"""
@@ -111,48 +111,6 @@ class Graph_demo(pg.PlotWidget, QDialog):
     def kill_graph(self):
         self.not_killed = False
         # add hardware interuppt code to kill the running graph
-
-    def add_point(self):
-        # this function is obselete right now!!
-        # it's here just for a refernce of the basic idea
-        global seconds
-        current_reading = 0
-        times, vals = [0], []
-        ind = 1
-        # change back to while instead of 'if' if using threads and not Qtimer
-        while (self.not_killed):
-            value_read, reading = self.yielder()
-            if (value_read):
-                current_reading = reading
-                vals.append(current_reading)
-                if seconds * wait_time > 20:
-                    self.setXRange(0 + ind, 20 + ind)
-                    ind += 1
-                if self.data_pointer is None:
-                    self.plot(times, vals, pen=self.pen)  # ,symbol="o",symbolsize=30)
-                else:
-                    self.data_pointer.setdata(times, vals)
-                print("PLot done")
-                # plt.pause(0.05)
-            else:
-                vals.append(current_reading)
-                if seconds * wait_time > 20:
-                    # plt.plot(times[ind:], vals[ind:],color="blue")
-                    # plt.axis([ind, values_to_show+ ind - 1, 0, 1])
-                    # self.plot(times[ind:], times[:(values_to_show + ind)])
-                    self.setXRange(0 + ind, 20 + ind)
-                    ind += 1
-                if self.data_pointer is None:
-                    self.plot(times, vals, pen=self.pen)  # ,symbol="o",symbolsize=30)
-                else:
-                    self.data_pointer.setdata(times, vals)
-                print("PLot donesdvsdvv")
-                # plt.pause(0.05)
-
-            # wait time before next reading taken
-            time.sleep(wait_time)
-            seconds += wait_time
-            times.append(seconds)
 
     def optimized_graph(self):
         if self.not_killed is True:
@@ -174,8 +132,35 @@ class Graph_demo(pg.PlotWidget, QDialog):
             if self.updateLabel is not None:
                 self.updateLabel.setText(str(reading)[:5])
 
+    def add_manual_point(self):
+        # use 1 as data for rotary encoder and float value of reading for the linear encoder
+        # tested and works like a charm
+        # graph plotting doesn't work check that!!
+        prev=1
+        while(self.not_killed):
+            value_read,(time,data)=self.yielder()
+            print(time,data)
+            # data=data[0]
+            if time!=prev:
+                self.times.append(time)
+                self.values.append(data)
+                print(self.times)
+                self.data_pointer.setData(self.times, self.values)
+                self.base_pointer.setData(self.times, [0]*len(self.values))
+                if len(self.times)>=self.values_to_show:
+                    self.times.pop(0)
+                    self.values.pop(0)
+                prev=time
+
+
+
 
 # app=QApplication([])
 # w=Graph_demo()
+# w.start_graph()
+# w.show()
 # import sys
+# for x in range(10):
+#     w.add_manual_point(0.6+x,x)
+#     time.sleep(1)
 # sys.exit(app.exec_())

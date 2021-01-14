@@ -13,11 +13,14 @@ from flask_restful import Resource, Api
 from flask import Flask,request
 from Flask_server_files.DBoperations import *
 from Flask_server_files.exposed_values import *
-from Flask_server_files.handler_thread import standby_tracker
+# from Flask_server_files.handler_thread import standby_tracker
 from threading import Thread
+from flask_cors import CORS
+
 
 app = Flask(__name__)
 api = Api(app)
+CORS(app)
 
 def get_cur_read():
     return current_val
@@ -128,23 +131,38 @@ class VFD_control(Resource):
 
 class Rotary(Resource):
 
-    def get(self,type):
+    def get(self,time):
         global pulse_values,pulse_read
-        return {"pulses":pulse_read}
+        print(pulse_values[-1])
+        return {"pulses":pulse_values[-1]}
 
-    def post(self,type):
-        global pulse_read,pulse_values,standing_by
-        # val=request.form['pulses']
-        if type=="start":
-            t=Thread(target=standby_tracker)
-            t.start()
-            return {'status':'timer started'}
-        else:
-            pulse_read=True
-            if standing_by:
-                standing_by=False
-            time.sleep(0.95)
-            return {'status':'updated'}
+    # def post(self,type):
+    #     global pulse_read,pulse_values,standing_by
+    #     # val=request.form['pulses']
+    #     if type=="start":
+    #         t=Thread(target=standby_tracker,args=[app])
+    #         t.start()
+    #         return {'status':'timer started'}
+    #     else:
+    #         pulse_read=True
+    #         if standing_by:
+    #             standing_by=False
+    #         # time.sleep(0.95)
+    #         return {'status':'updated'}
+    def post(self,time):
+        # the post request is to be given in the format of time encoded as a string
+        # such a post request indicates that there has been a pulse at that instant of time
+        # simple add the a 1 to the graph at that time....converting it to seconds from the start time
+        # time format -> <seconds from the start>
+        global pulse_values
+        pulse_values.append(time)
+        if len(pulse_values)>100:
+            # write_to_rotary(pulse_values)
+            pulse_values=[]
+
+
+
+
 
 
 
@@ -175,8 +193,8 @@ api.add_resource(TodoSimple,'/<string:todo_id>')
 api.add_resource(VFD_control,'/vfd/<string:mode>/<string:value>')
 # use lin/<any number> to get the value
 # use lin/<reading> to put the value
-api.add_resource(Linear,'/lin/<string:reading>')
-api.add_resource(Rotary,'/rot/<string:type>')
+api.add_resource(Linear,'/lin/<string:type>')
+api.add_resource(Rotary,'/rot/<string:time>')
 # api.add_resource(TodoSimple,'/')
 
 print("server started!!")

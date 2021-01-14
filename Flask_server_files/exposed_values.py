@@ -21,7 +21,7 @@ voltage = 0
 # rotary values
 
 pulse_read = False
-pulse_values = []
+pulse_values = [0]
 standing_by=False
 zero_count=0
 standby_timeout=0
