@@ -1,10 +1,16 @@
 import RPi.GPIO as GPIO
 import gpiozero as gpz
-from .analog_read import analog_read
+#from .analog_read import analog_read
 from time import sleep
 from requests import get,put,post
 import time
 from threading import Thread
+
+# all Rpi and gpiozero modules seems to work perfectly on the Rasperry pi
+
+def analog_read(v1,v2):
+    # just for testing purpose
+    print("Analog read function was called")
 
 class ControlModule():
     # here gndPin is the analog circuit pin -> b_pin
