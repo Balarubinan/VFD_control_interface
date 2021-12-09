@@ -2,23 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94e9092b-a14a-48aa-99e0-14a969953cd1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Flask_server_files/RPI_operations.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flask_server_files/SocketClient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/FlaskWreact.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FlaskWreact.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flask_server_files/Latest_server_copy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/Latest_server_copy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flask_server_files/simulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/simulator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flask_server_files/socket_online.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/socket_online.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RasperryPi_control_module/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/RasperryPi_control_module/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RasperryPi_control_module/client_functions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RasperryPi_control_module/control_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/RasperryPi_control_module/control_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RasperryPi_control_module/interface_functions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RasperryPi_control_module/onboard_live_graph.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI_files/UI_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI_files/UI_methods.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI_files/graph_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI_files/graph_demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/live_graph.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/live_graph.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tkinter app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tkinter app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flask_server_files/RPI_operations.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/RPI_operations.py" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +24,13 @@
   </component>
   <component name="ProjectId" id="1eSZnIdwzJKJe3qjPwJhjwHUwnp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -51,19 +45,28 @@
       <recent name="C:\Users\Balarubinan\PycharmProjects\FlaskWreact\RasperryPi_control_module" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Python.Sugg_box">
+  <component name="RunManager" selected="Python.RPI_operations">
+    <configuration name="RPI_operations" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FlaskWreact" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Flask_server_files" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Flask_server_files/RPI_operations.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="SocketClient" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="FlaskWreact" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -148,37 +151,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tkinter app" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="FlaskWreact" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/tkinter app.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Sugg_box" />
+        <item itemvalue="Python.RPI_operations" />
         <item itemvalue="Python.SocketClient" />
+        <item itemvalue="Python.Sugg_box" />
         <item itemvalue="Python.scratch_9" />
         <item itemvalue="Python.SocketView" />
-        <item itemvalue="Python.tkinter app" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -197,12 +180,11 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
