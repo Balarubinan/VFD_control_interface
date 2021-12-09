@@ -46,7 +46,7 @@ class Graph_demo(pg.PlotWidget, QDialog):
 
     def start_graph(self):
         self.init_settings()
-        self.t = Thread(target=self.add_manual_point)
+        self.t = Thread(target=self.optimized_graph)
         self.t.start()
         print("After thread starting!")
 
@@ -105,7 +105,7 @@ class Graph_demo(pg.PlotWidget, QDialog):
         """simulator of reading values from the board"""
         # if randint(1, 100) % 2 == 0:
         #     return False, -1
-        return True, ((choice([-1, 1])) * np.random.random())
+        return True,((choice([-1, 1])) * np.random.random())
         # return True, self.yielder()
 
     def kill_graph(self):
@@ -113,13 +113,15 @@ class Graph_demo(pg.PlotWidget, QDialog):
         # add hardware interuppt code to kill the running graph
 
     def optimized_graph(self):
-        if self.not_killed is True:
+        print("optimmized graph called")
+        while self.not_killed is True:
             got, reading = self.yielder()
             self.cnt += 1
             if got:
                 self.values.append(reading)
             else:
                 self.values.append(self.values[-1])
+            print("Plot valuse jsut before :",self.values)
             self.data_pointer.setData([x for x in range(self.cnt)], self.values)
             if len(self.values) > self.values_to_show:
                 self.ind += 1
@@ -131,6 +133,7 @@ class Graph_demo(pg.PlotWidget, QDialog):
             self.addItem(w)
             if self.updateLabel is not None:
                 self.updateLabel.setText(str(reading)[:5])
+            time.sleep(1)
 
     def add_manual_point(self):
         # use 1 as data for rotary encoder and float value of reading for the linear encoder
@@ -139,7 +142,7 @@ class Graph_demo(pg.PlotWidget, QDialog):
         prev=1
         while(self.not_killed):
             value_read,(time,data)=self.yielder()
-            print(time,data)
+            print("inside manual Point",time,data)
             # data=data[0]
             if time!=prev:
                 self.times.append(time)
@@ -154,7 +157,7 @@ class Graph_demo(pg.PlotWidget, QDialog):
 
 
 
-
+#
 # app=QApplication([])
 # w=Graph_demo()
 # w.start_graph()
@@ -164,3 +167,12 @@ class Graph_demo(pg.PlotWidget, QDialog):
 #     w.add_manual_point(0.6+x,x)
 #     time.sleep(1)
 # sys.exit(app.exec_())
+
+
+# run the Latest server file
+# use tkinter app.py to input value using the slider
+# use the UI_method QT app to monitor the graph
+# add_manual_point method is obselte
+# Optimize graph method is the crct one
+# Currently all the graphs are running on default Data from the Get_values fn
+

@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QMainWindow
 from PyQt5 import QtWidgets
 from src.UI_files.graph_demo import Graph_demo
 from requests import get
-from Flask_server_files.simulator import get_values
+from Flask_server_files.simulator import get_values,fake_get_values
 
 
 class Main_App(Ui_Dialog, QMainWindow):
@@ -33,11 +33,11 @@ class Main_App(Ui_Dialog, QMainWindow):
         # uncomment to use actual value
         self.lingr.set_yield_function(self.get_rot_values)
         self.lingr.start_graph()
-        # self.lingrVol = self.create_sample_graph(self.LinVoltageGraph, "Time (sec)", "voltage (m)",color="Y")
-        # self.lingrVol.start_graph()
-        # self.rotgr = self.create_sample_graph(self.RotGraph, "Time (sec)", "pulses ",size=[0,0,1200,330],color="B")
-        # # self.rotgr.set_yield_function(get_values)
-        # self.rotgr.start_graph()
+        self.lingrVol = self.create_sample_graph(self.LinVoltageGraph, "Time (sec)", "voltage (m)",color="Y")
+        self.lingrVol.start_graph()
+        self.rotgr = self.create_sample_graph(self.RotGraph, "Time (sec)", "pulses ",size=[0,0,1200,330],color="B")
+        # self.rotgr.set_yield_function(get_values)
+        self.rotgr.start_graph()
 
 
         # CLEAR_BUTTON
@@ -97,10 +97,13 @@ class Main_App(Ui_Dialog, QMainWindow):
         return gr
 
     def get_rot_values(self):
-        val = get("http://127.0.0.1:5000/rot/23")
-        print("respoms",val)
-        val=val.json()['pulses']
-        return True,(int(val),1)
+        # val = get("http://127.0.0.1:5000/rot")
+        # print("respoms",val)
+        # val=val.json()['pulses']
+        # print("pulses is ",val)
+        # return True,(int(val),1)
+        # return True,fake_get_values()
+        return get_values()
 
 
 

@@ -1,5 +1,11 @@
+from random import randint
+
 import matplotlib.pyplot as plt
 import time
+
+# from pandas import np
+import numpy as np
+
 from src.reader import yielder
 
 # plt.axis([0, 100, 0, 1])
@@ -27,10 +33,10 @@ def init_settings():
 
 def get_data():
     """simulator of reading values from the board"""
-    # if randint(1, 100) % 2 == 0:
-    #     return False, -1
-    # return True, np.random.random()
-    return True,yielder()
+    if randint(1, 100) % 2 == 0:
+        return False, -1
+    return True, np.random.random()
+    # return True,yielder()
 
 
 def kill_graph():

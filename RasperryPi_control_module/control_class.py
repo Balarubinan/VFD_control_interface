@@ -7,10 +7,12 @@ import time
 from threading import Thread
 
 # all Rpi and gpiozero modules seems to work perfectly on the Rasperry pi
+# git pull VFD_project master to pull changes from pi board!
 
 def analog_read(v1,v2):
     # just for testing purpose
     print("Analog read function was called")
+    return 190
 
 class ControlModule():
     # here gndPin is the analog circuit pin -> b_pin

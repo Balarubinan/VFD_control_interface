@@ -1,15 +1,24 @@
+from random import choice
+
 from requests import get,post
+
+import numpy as np
 
 # data=post("http://127.0.0.1:5000/rot/start")
 # print(data.json())
 
 def get_values():
-    value=get("http://127.0.0.1:5000/rot/sdvsdv")
+    value=get("http://127.0.0.1:5000/rot")
     print(value)
     value=value.json()['pulses']
 
     print(value)
     return(True,int(value))
+
+def fake_get_values():
+    return True,((choice([-1, 1])) * np.random.random())
+
+
 
 # # get_values()
 # from socketio import Client

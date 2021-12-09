@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94e9092b-a14a-48aa-99e0-14a969953cd1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Flask_server_files/RPI_operations.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flask_server_files/SocketClient.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flask_server_files/Latest_server_copy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/Latest_server_copy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flask_server_files/simulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/simulator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flask_server_files/socket_online.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/socket_online.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RasperryPi_control_module/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/RasperryPi_control_module/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RasperryPi_control_module/client_functions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RasperryPi_control_module/control_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/RasperryPi_control_module/control_class.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RasperryPi_control_module/interface_functions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RasperryPi_control_module/onboard_live_graph.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI_files/UI_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI_files/UI_methods.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI_files/graph_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI_files/graph_demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/live_graph.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/live_graph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tkinter app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tkinter app.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,18 +37,18 @@
   <component name="ProjectId" id="1eSZnIdwzJKJe3qjPwJhjwHUwnp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/RasperryPi_control_module" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Balarubinan\PycharmProjects\FlaskWreact\RasperryPi_control_module" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Balarubinan\PycharmProjects\FlaskWreact\Flask_server_files" />
+      <recent name="C:\Users\Balarubinan\PycharmProjects\FlaskWreact\src" />
       <recent name="C:\Users\Balarubinan\PycharmProjects\FlaskWreact" />
       <recent name="C:\Users\Balarubinan\PycharmProjects\FlaskWreact\Flask_rest_Api Files" />
-      <recent name="C:\Users\Balarubinan\PycharmProjects\FlaskWreact\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Balarubinan\PycharmProjects\FlaskWreact\RasperryPi_control_module" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -49,29 +63,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.model_creator">
-    <configuration name="UI_methods" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="FlaskWreact" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/UI_files" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/UI_files/UI_methods.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="actual_server_copy_rest" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.Sugg_box">
+    <configuration name="SocketClient" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="FlaskWreact" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -83,7 +76,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Flask_server_files/actual_server_copy_rest.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Flask_server_files/SocketClient.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -92,7 +85,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="graph_demo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="SocketView" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="FlaskWreact" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -100,11 +93,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/UI_files" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Flask_server_files" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/UI_files/graph_demo.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Flask_server_files/SocketView.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -113,7 +106,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="model_creator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Sugg_box" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="FlaskWreact" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -121,11 +114,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Machine_learning_files" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Machine_learning_files/model_creator.py" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/Sugg_box.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="scratch_9" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="FlaskWreact" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_9.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -157,10 +171,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.model_creator" />
-        <item itemvalue="Python.UI_methods" />
-        <item itemvalue="Python.actual_server_copy_rest" />
-        <item itemvalue="Python.graph_demo" />
+        <item itemvalue="Python.Sugg_box" />
+        <item itemvalue="Python.SocketClient" />
+        <item itemvalue="Python.scratch_9" />
+        <item itemvalue="Python.SocketView" />
         <item itemvalue="Python.tkinter app" />
       </list>
     </recent_temporary>

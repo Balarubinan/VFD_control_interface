@@ -11,8 +11,10 @@
 
 from flask_restful import Resource, Api
 from flask import Flask,request
-from .DBoperations import *
-from .exposed_values import *
+from Flask_server_files.DBoperations import *
+from Flask_server_files.exposed_values import *
+# from .DBoperations import *
+# from .exposed_values import *
 
 app = Flask(__name__)
 api = Api(app)
@@ -130,8 +132,9 @@ class Rotary(Resource):
     def post(self):
         global pulse_read,pulse_values
         val=request.form['pulses']
-        pulse_read+=val
-        write_to_rotary(val)
+        pulse_read+=float(val)
+        # fro debugging
+        # write_to_rotary(val)
         pulse_values.append(val)
         if len(pulse_values)==100:
             # remove one value
@@ -149,6 +152,6 @@ api.add_resource(Rotary,'/rot')
 print("server started!!")
 
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
-#     print("server started!!")
+if __name__ == '__main__':
+    app.run(debug=True)
+    print("server started!!")

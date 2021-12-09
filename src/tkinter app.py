@@ -16,8 +16,9 @@ def func():
         curr_label['text']=v1.get()
         val=100
         # val=str(v1.get()/100)
+        print(v1.get())
         if i%2==0:
-            val=post("http://127.0.0.1:5000/rot/reading")
+            val=post(f"http://127.0.0.1:5000/rot",data={'pulses':float(v1.get())})
             print("Resonse codde ",val)
         i+=1
         sleep(2)
