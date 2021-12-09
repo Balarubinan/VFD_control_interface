@@ -2,6 +2,7 @@ import random
 
 from socketio import Client
 import time
+from Flask_server_files.RPI_operations import measure_voltage
 
 sio=Client()
 
@@ -16,10 +17,10 @@ def ready_method(data):
     sio.emit('typeUpdate',{"type":"send",'devicename':"Tractor1"})
     # sio.emit('nameReg',{'devicename':"Tractor1"})
     while(1):
-        val={"value":random.randint(-12,12)}
+        val={"value":measure_voltage()/51}
         print("Sending value",val)
         sio.emit('valueUpdate',val)
-        time.sleep(2)
+        time.sleep(.5)
 
 @sio.on('ping')
 def ping_check(data):

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94e9092b-a14a-48aa-99e0-14a969953cd1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/FlaskWreact.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FlaskWreact.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="94e9092b-a14a-48aa-99e0-14a969953cd1" name="Default Changelist" comment="* added addressing and ADC input">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Flask_server_files/RPI_operations.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/RPI_operations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flask_server_files/SocketClient.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/SocketClient.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +44,7 @@
       <recent name="C:\Users\Balarubinan\PycharmProjects\FlaskWreact\RasperryPi_control_module" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.RPI_operations">
+  <component name="RunManager" selected="Python.SocketClient">
     <configuration name="RPI_operations" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FlaskWreact" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -153,8 +152,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.RPI_operations" />
         <item itemvalue="Python.SocketClient" />
+        <item itemvalue="Python.RPI_operations" />
         <item itemvalue="Python.Sugg_box" />
         <item itemvalue="Python.scratch_9" />
         <item itemvalue="Python.SocketView" />
@@ -173,6 +172,14 @@
       <option name="presentableId" value="Default" />
       <updated>1594317120039</updated>
     </task>
+    <task id="LOCAL-00001" summary="* added addressing and ADC input">
+      <created>1639036620602</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1639036620602</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -186,5 +193,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="* added addressing and ADC input" />
+    <option name="LAST_COMMIT_MESSAGE" value="* added addressing and ADC input" />
   </component>
 </project>
