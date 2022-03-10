@@ -44,7 +44,7 @@
       <recent name="C:\Users\Balarubinan\PycharmProjects\FlaskWreact\RasperryPi_control_module" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.SocketClient">
+  <component name="RunManager" selected="Python.RPI_operations">
     <configuration name="RPI_operations" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FlaskWreact" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -152,8 +152,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.SocketClient" />
         <item itemvalue="Python.RPI_operations" />
+        <item itemvalue="Python.SocketClient" />
         <item itemvalue="Python.Sugg_box" />
         <item itemvalue="Python.scratch_9" />
         <item itemvalue="Python.SocketView" />

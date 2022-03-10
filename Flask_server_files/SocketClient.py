@@ -2,6 +2,7 @@ import random
 
 from socketio import Client
 import time
+# from Flask_server_files.RPI_operations import measure_voltage
 from Flask_server_files.RPI_operations import measure_voltage
 
 sio=Client()
@@ -14,10 +15,11 @@ def connect():
 # send random value @ random time slots of max 5 secs
 @sio.on("ready")
 def ready_method(data):
-    sio.emit('typeUpdate',{"type":"send",'devicename':"Tractor1"})
+    sio.emit('typeUpdate',{"type":"send",'devicename':"RaspiTractor1"})
     # sio.emit('nameReg',{'devicename':"Tractor1"})
     while(1):
         val={"value":measure_voltage()/51}
+        # val={"value":random.randint(-12,12)/51}
         print("Sending value",val)
         sio.emit('valueUpdate',val)
         time.sleep(.5)
