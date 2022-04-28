@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94e9092b-a14a-48aa-99e0-14a969953cd1" name="Default Changelist" comment="* added addressing and ADC input">
+      <change afterPath="$PROJECT_DIR$/Flask_server_files/BufferScript.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flask_server_files/SocketClientV2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/FlaskWreact.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FlaskWreact.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Flask_server_files/RPI_operations.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/RPI_operations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Flask_server_files/SocketClient.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/SocketClient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flask_server_files/SocketView.py" beforeDir="false" afterPath="$PROJECT_DIR$/Flask_server_files/SocketView.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +26,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1eSZnIdwzJKJe3qjPwJhjwHUwnp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -30,22 +46,23 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Flask_server_files" />
+    <property name="settings.editor.selected.configurable" value="advanced.settings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Balarubinan\PycharmProjects\FlaskWreact\Flask_server_files" />
+      <recent name="C:\Users\Balarubinan\PycharmProjects\FlaskWreact\RasperryPi_control_module" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Balarubinan\PycharmProjects\FlaskWreact\Flask_server_files" />
       <recent name="C:\Users\Balarubinan\PycharmProjects\FlaskWreact\src" />
       <recent name="C:\Users\Balarubinan\PycharmProjects\FlaskWreact" />
       <recent name="C:\Users\Balarubinan\PycharmProjects\FlaskWreact\Flask_rest_Api Files" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Balarubinan\PycharmProjects\FlaskWreact\RasperryPi_control_module" />
-    </key>
   </component>
-  <component name="RunManager" selected="Python.RPI_operations">
-    <configuration name="RPI_operations" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.scratch_3">
+    <configuration name="BufferScript" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FlaskWreact" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -57,7 +74,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Flask_server_files/RPI_operations.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Flask_server_files/BufferScript.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -87,7 +104,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="SocketView" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="SocketClientV2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FlaskWreact" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -99,7 +116,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Flask_server_files/SocketView.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Flask_server_files/SocketClientV2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -129,7 +146,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="scratch_9" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="scratch_3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FlaskWreact" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -141,7 +158,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_9.py" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -152,11 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.RPI_operations" />
-        <item itemvalue="Python.SocketClient" />
+        <item itemvalue="Python.scratch_3" />
+        <item itemvalue="Python.SocketClientV2" />
         <item itemvalue="Python.Sugg_box" />
-        <item itemvalue="Python.scratch_9" />
-        <item itemvalue="Python.SocketView" />
+        <item itemvalue="Python.BufferScript" />
+        <item itemvalue="Python.SocketClient" />
       </list>
     </recent_temporary>
   </component>
@@ -192,7 +209,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="* added addressing and ADC input" />

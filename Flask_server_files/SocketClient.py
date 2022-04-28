@@ -1,9 +1,9 @@
 import random
-
 from socketio import Client
 import time
-# from Flask_server_files.RPI_operations import measure_voltage
-from Flask_server_files.RPI_operations import measure_voltage
+import os
+from BufferScript import *
+
 
 sio=Client()
 
@@ -15,14 +15,14 @@ def connect():
 # send random value @ random time slots of max 5 secs
 @sio.on("ready")
 def ready_method(data):
-    sio.emit('typeUpdate',{"type":"send",'devicename':"RaspiTractor1"})
+    sio.emit('typeUpdate',{"type":"send",'devicename':"Tractor1"})
     # sio.emit('nameReg',{'devicename':"Tractor1"})
     while(1):
-        val={"value":measure_voltage()/51}
-        # val={"value":random.randint(-12,12)/51}
+        os.system("cls\n")
+        val={"value":random.randint(-12,12)}
         print("Sending value",val)
         sio.emit('valueUpdate',val)
-        time.sleep(.5)
+        time.sleep(2)
 
 @sio.on('ping')
 def ping_check(data):
@@ -51,10 +51,11 @@ from requests import get
 
 # calling refresh metho before starting the comm
 # get("https://argo-server-1.herokuapp.com/refresh")
-sio.connect("http://argo-server-1.herokuapp.com/")
+# sio.connect("http://argo-server-1.herokuapp.com/")
 # no refresh need as clients will request by name
-# get("http://localhost:5000/refresh")
-# sio.connect("http://localhost:5000")
+# get("http://localhost:5000/
+
+sio.connect("http://localhost:5000")
 
 # wrap all the above methods in a class
 # design a buffer mode if the board goes offline

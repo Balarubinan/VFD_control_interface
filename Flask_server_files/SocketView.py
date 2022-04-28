@@ -1,6 +1,7 @@
 import random
 
 from socketio import Client
+from .RPI_operations import *
 import time
 
 sio=Client()

@@ -1,5 +1,6 @@
 import smbus
 import time
+from random import random
 def get_current_value():
     pass
 
@@ -8,7 +9,7 @@ def calculate_alttitude_values():
 
 addr=0x48
 A0=0x40
-bus = smbus.SMBus(1);
+bus = smbus.SMBus(1)
 bus.write_byte(addr, A0)
 def measure_voltage():
     # while True:
@@ -26,6 +27,7 @@ def ready_method():
         print("Sending value",val/51)
        # sio.emit('valueUpdate',val)
         time.sleep(.5)
+
 
 
 #measure_voltage()
